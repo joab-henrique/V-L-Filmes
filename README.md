@@ -1,6 +1,6 @@
 # 🎬 Seleção VLAB - Front-end
 
-Projeto de Catálogo de Filmes e Séries com Perfis de Usuário, por **Joab Henrique Marques da Silva**.
+Projeto de Catálogo de Filmes e Séries com perfil de usuário, filtros por categoria e ano, ordenação por critérios e lista de filmes salvos (maratona), por **Joab Henrique Marques da Silva**.
 
 Este repositório contém a solução desenvolvida para o processo seletivo do **V-Lab**, com o progresso das funcionalidades, correção de bugs e implementação de melhorias.
 
