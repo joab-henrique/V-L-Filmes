@@ -85,3 +85,14 @@ Obs. sobre os bugs: O carrossel de Upcoming / Em Breve, permanece como uma simul
 - A funcionalidade de Explore All ainda precisa ser ajustada para direcionar e filtrar os resultados conforme esperado.
 
 ---
+
+## 🙏 Considerações Finais
+
+Agradeço pela oportunidade de participar deste processo seletivo e por poder contribuir com este desafio.  
+Durante o desenvolvimento, aprendi bastante, desde a correção de bugs até a implementação de novas funcionalidades e boas práticas de organização.
+
+Além disso, esse projeto foi uma ótima chance de explorar mais o Angular, consolidar conceitos de arquitetura (como o Facade) e lidar com situações reais de construção e manutenção de um sistema.  
+
+Fico feliz com o progresso alcançado e estou aberto a novos aprendizados.  
+
+Obrigado pela oportunidade!
