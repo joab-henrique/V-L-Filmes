@@ -1,0 +1,40 @@
+<app-search-bar 
+    [control]="searchControl"
+    (filterChange)="onFilterChange($event)"
+    (sortChange)="onSortChange($event)">
+</app-search-bar>
+
+<div class="movie-list-container">
+  <ng-container *ngIf="isSearching">
+    <app-search-results 
+        [movies$]="searchResults$" 
+        (movieClick)="onMovieSelect($event)">
+    </app-search-results>
+  </ng-container>
+
+  <ng-container *ngIf="!isSearching">
+    <app-carousel
+      [title]="'Filmes Populares'"
+      [items]="popularMovies"
+      [isExplore]="false"
+      [exploreLink]="'/movies/popular'"
+      (itemClick)="onMovieSelect($event)">
+    </app-carousel>
+
+    <app-carousel
+      [title]="'Os 10 Melhores Filmes'"
+      [items]="topRatedMovies"
+      [isExplore]="false"
+      [exploreLink]="'/movies/top-rated'"
+      (itemClick)="onMovieSelect($event)">
+    </app-carousel>
+
+    <app-carousel
+      [title]="'Próximos Lançamentos'"
+      [items]="upcomingMovies"
+      [isExplore]="false"
+      [exploreLink]="'/movies/upcoming'"
+      (itemClick)="onMovieSelect($event)" >
+    </app-carousel>
+  </ng-container>
+</div>

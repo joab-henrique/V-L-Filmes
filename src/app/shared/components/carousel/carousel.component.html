@@ -12,9 +12,9 @@
       </svg>
     </button>
 
-    <div class="carousel__items" #carouselContainer>
+    <div class="carousel__items" #carouselContainer (scroll)="updateNavigation()">
       @for (item of items; track item.id) {
-        <div class="card">
+        <div class="card" (click)="onItemClicked(item)">
           <a [routerLink]="[item.link]" class="card__link">
             <div class="card__img">
               @if (item.imgSrc) {
@@ -28,7 +28,6 @@
               }
             </div>
 
-            <!-- Default Carousel -->
             @if (isDefaultCarousel) {
               <div>
                 <h2 class="card__name">{{ item.title }}</h2>
@@ -41,7 +40,6 @@
               </div>
             }
 
-            <!-- Cast Carousel -->
             @if (isCastCarousel) {
               <div>
                 <h2 class="credits-item__name">{{ item.name }}</h2>

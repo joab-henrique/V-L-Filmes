@@ -1,28 +1,19 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <div class="app-container">
   <header class="app-header">
-    <h1 class="app-title">{{ title }}</h1>
+    <a routerLink="/movies" style="text-decoration: none;">
+      <h1 class="app-title">{{ title }}</h1>
+    </a>
+
     <nav class="app-nav">
-      <a routerLink="/movies" routerLinkActive="active" class="nav-link">Movies</a>
+      <a routerLink="/movies" routerLinkActive="active" class="nav-link">Filmes</a>
+      
+      <a (click)="openMarathonList()" style="cursor: pointer;" class="nav-link">Maratonas</a>
     </nav>
   </header>
 
-  <main class="app-main">
+  <main class="app-main"> 
     <router-outlet></router-outlet>
   </main>
-</div>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+  <app-marathon-list></app-marathon-list>
+</div>

@@ -1,0 +1,59 @@
+<div class="marathon-overlay" *ngIf="showModal$ | async">
+  <div class="marathon-container">
+    <button class="close-btn" (click)="closeModal()">✕</button>
+
+    <h2>Olá, {{ (username$ | async) || 'Visitante' }}!</h2>
+
+    <div *ngIf="!(username$ | async)">
+      <input [(ngModel)]="tempName" placeholder="Digite seu nome" />
+      <button (click)="login()">Entrar</button>
+    </div>
+
+    <h3>Sua Maratona Atual:</h3>
+
+    <ng-container *ngIf="(movies$ | async) as movieList">
+      <div *ngIf="movieList.length === 0; else filledList">
+        <p>Sua lista de maratona está vazia.</p>
+      </div>
+      <ng-template #filledList>
+        <p class="total-duration">
+          <strong>Duração Total:</strong> 
+          {{ (totalDuration$ | async) | formatDuration }}
+        </p>
+        <ul>
+          <li *ngFor="let movie of movieList">
+            <span>{{ movie.title }} ({{ movie.runtime }} min)</span>
+            <button class="remove-btn" (click)="removeMovie(movie.id)">Remover</button>
+          </li>
+        </ul>
+      </ng-template>
+    </ng-container>
+
+    <hr class="section-divider">
+    <div class="marathon-management">
+      <h3>Suas Maratonas</h3>
+      
+      <div class="save-section">
+        <input [(ngModel)]="newMarathonName" placeholder="Nome da nova maratona" />
+        <button (click)="saveMarathon()">Salvar Lista</button>
+      </div>
+
+      <div class="saved-lists" *ngIf="(savedMarathonNames$ | async) as listNames">
+        <h4>Maratonas Salvas:</h4>
+        <ul *ngIf="listNames.length > 0; else noSavedLists">
+          <li *ngFor="let listName of listNames">
+            <span>{{ listName }}</span>
+            <div class="list-actions">
+              <button class="load-btn" (click)="loadMarathon(listName)">Carregar</button>
+              <button class="delete-btn" (click)="deleteMarathon(listName)">Excluir</button>
+            </div>
+          </li>
+        </ul>
+        <ng-template #noSavedLists>
+          <p>Nenhuma maratona salva ainda.</p>
+        </ng-template>
+      </div>
+
+    </div>
+    </div>
+</div>

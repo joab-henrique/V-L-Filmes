@@ -1,0 +1,12 @@
+<div class="search-results-grid">
+    <ng-container *ngIf="movies$ | async as movies; else noResults">
+        <app-movie-card 
+          *ngFor="let movie of movies" 
+          [movie]="movie"
+          (cardClick)="onMovieCardClicked($event)">
+        </app-movie-card>
+    </ng-container>
+    <ng-template #noResults>
+        <p class="no-results-message">Nenhum filme encontrado.</p>
+    </ng-template>
+</div>

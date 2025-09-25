@@ -1,0 +1,40 @@
+<div class="search-controls-container">
+  <div class="search-bar-wrapper">
+    <input type="text"
+           [formControl]="control"
+           class="search-input"
+           placeholder="Procure por um filme, ator, diretor...">
+  </div>
+
+  <div class="filters-sort-wrapper">
+    <div class="filter-group">
+      <label for="genre-filter">Gênero:</label>
+      <select id="genre-filter" (change)="onFilterChange()" [(ngModel)]="selectedGenre">
+        <option value="">Todos</option>
+        <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="year-filter">Ano:</label>
+      <select id="year-filter" (change)="onFilterChange()" [(ngModel)]="selectedYear">
+        <option value="">Todos</option>
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+      </select>
+    </div>
+
+    <div class="sort-group">
+      <label for="sort-by">Ordenar por:</label>
+      <select id="sort-by" (change)="onSortChange($event)" [(ngModel)]="selectedSort">
+        <option value="popularity.desc">Popularidade</option>
+        <option value="vote_average.desc">Nota</option>
+        <option value="original_title.asc">Nome (A-Z)</option>
+        <option value="original_title.desc">Nome (Z-A)</option>
+        <option value="release_date.desc">Ano (Mais novo)</option>
+        <option value="release_date.asc">Ano (Mais antigo)</option>
+        <option value="runtime.desc">Duração (Mais longo)</option>
+        <option value="runtime.asc">Duração (Mais curto)</option>
+      </select>
+    </div>
+  </div>
+</div>

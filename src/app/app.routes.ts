@@ -1,13 +1,26 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { MovieListComponent } from './features/movies/pages/main/movie-list.component';
+import { MarathonListComponent } from './features/movies/components/marathon-list/marathon-list.component';
 
 export const routes: Routes = [
   {
     path: 'movies',
-    loadChildren: () => import('./features/movies/movies.routes').then(m => m.MOVIE_ROUTES)
+    component: MovieListComponent
+  },
+  {
+    path: 'marathon-list',
+    component: MarathonListComponent,
+    outlet: 'marathon'
   },
   {
     path: '',
     redirectTo: 'movies',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full' }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}

@@ -1,0 +1,58 @@
+/* marathon-list.component.scss */
+
+.marathon-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);  /* transparente preto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.marathon-container {
+  background: rgba(20, 20, 20, 0.95); /* fundo escuro semi-transparente */
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  color: #fff; /* texto branco para contraste */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff; /* garante que o X seja visível */
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #333; /* fundo do input escuro */
+  color: #fff;      /* texto branco */
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: oklch(63.32% 0.24 31.68);
+  color: white;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: oklch(63.32% 0.24 31.68);;
+}
